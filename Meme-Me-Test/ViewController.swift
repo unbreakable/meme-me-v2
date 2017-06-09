@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolbarBottom: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationBar!
 
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
@@ -31,6 +32,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        // Get "real" names for custom fonts
         for family: String in UIFont.familyNames
         {
             print("\(family)")
@@ -39,6 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("== \(names)")
             }
         }
+        */
         
         pickerControllerJK.delegate = self
         
@@ -54,8 +58,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         shareButton.isEnabled = false
         
+        // Set colors for top and bottom bars
         toolbarBottom.barTintColor = UIColor(hexString: "#4097A3")
-        toolbarBottom.sizeToFit()
+        //toolbarBottom.sizeToFit() // thought this was needed but apparently not
+        navBar.barTintColor = UIColor(hexString: "#4097A3")
     }
     
     // MARK - Standard methods
@@ -150,11 +156,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save(_ memedImage: UIImage) {
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage())
         
-        /*
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        */
     }
     
     func generateMemedImage() -> UIImage {
@@ -194,6 +198,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 }
 
+// Added this extension (discovered on StackOverflow) to more easily use hex values to set UI colors
 extension UIColor {
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

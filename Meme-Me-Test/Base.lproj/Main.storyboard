@@ -81,17 +81,29 @@
                                 </items>
                                 <color key="tintColor" red="0.39120791434477897" green="0.42196459644315432" blue="0.4300820364564808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eN-1E-bBm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="MemeMe 1.0" id="lYr-3Z-EwB"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1ZF-ct-Qb1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="02l-lF-ukh"/>
+                            <constraint firstItem="4eN-1E-bBm" firstAttribute="leading" secondItem="xLM-tQ-DH3" secondAttribute="leading" id="55p-Ca-tmQ"/>
                             <constraint firstItem="1ZF-ct-Qb1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5Ex-iU-YdQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="top" secondItem="17w-7e-lYU" secondAttribute="bottom" constant="50" id="8fT-WT-SDY"/>
                             <constraint firstItem="rN7-m6-MTK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8v5-vf-pVK"/>
+                            <constraint firstItem="4eN-1E-bBm" firstAttribute="trailing" secondItem="xLM-tQ-DH3" secondAttribute="trailing" id="9AN-0P-lDQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9pr-8n-heQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFH-KT-IEv"/>
                             <constraint firstItem="rN7-m6-MTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-30" id="KUh-QH-7yH"/>
                             <constraint firstAttribute="trailing" secondItem="rN7-m6-MTK" secondAttribute="trailing" id="Zd5-6D-aFQ"/>
+                            <constraint firstItem="4eN-1E-bBm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h0d-ni-GHd"/>
                             <constraint firstItem="17w-7e-lYU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jb7-cQ-PLP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rN7-m6-MTK" secondAttribute="bottom" constant="-10" id="nfl-Lx-Iew"/>
                             <constraint firstItem="17w-7e-lYU" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="sQE-yO-7sa"/>
@@ -102,6 +114,7 @@
                         <outlet property="bottomText" destination="17w-7e-lYU" id="VHH-RA-jKX"/>
                         <outlet property="cameraButton" destination="JPa-lr-x2Q" id="R0f-Uv-Cmb"/>
                         <outlet property="imageViewJK" destination="rN7-m6-MTK" id="PWw-fU-FdA"/>
+                        <outlet property="navBar" destination="4eN-1E-bBm" id="Ooe-sF-z72"/>
                         <outlet property="shareButton" destination="UCw-aP-B8Y" id="5sQ-N7-SrZ"/>
                         <outlet property="toolbarBottom" destination="xLM-tQ-DH3" id="e3d-5w-0n1"/>
                         <outlet property="topText" destination="1ZF-ct-Qb1" id="ufu-Qy-2VU"/>
