@@ -22,12 +22,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeTextAttributes: [String : Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSFontAttributeName: UIFont(name: "Impact", size: 40)!,
+            // Add choices for: 
+            // Impact, Oswald, AATypewriter, AdobeGothicStd-Bold, CooperBlackStd, HoboStd, Whoa!
         NSStrokeWidthAttributeName: -3.0
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+        
         pickerControllerJK.delegate = self
         
         topText.delegate = self

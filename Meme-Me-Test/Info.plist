@@ -26,6 +26,16 @@
 	<string>testing</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Just testing</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AATypewriter.ttf</string>
+		<string>AdobeGothicBold.otf</string>
+		<string>CooperBlackStd.otf</string>
+		<string>HoboStd.otf</string>
+		<string>Impact.ttf</string>
+		<string>Oswald-Regular.ttf</string>
+		<string>Whoa.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
