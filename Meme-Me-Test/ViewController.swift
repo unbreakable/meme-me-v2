@@ -14,9 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolbarBottom: UIToolbar!
-    
 
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
@@ -42,6 +41,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomText.textAlignment = .center
         
         shareButton.isEnabled = false
+        
+        toolbarBottom.barTintColor = UIColor(hexString: "#4097A3")
+        toolbarBottom.sizeToFit()
     }
     
     // MARK - Standard methods
@@ -74,23 +76,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         
+        shareButton.isEnabled = true
+        
         imageViewJK.contentMode = .scaleAspectFit
-        dismiss(animated: true, completion: nil)
         imageViewJK.image = pickedImage
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        if (imageViewJK.image != nil) {
+            shareButton.isEnabled = true
+        } else {
+            shareButton.isEnabled = false
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK - Text Field Delegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == "TOP" {
-            textField.text = ""
-        } else if textField.text == "BOTTOM" {
+        if (textField.text == "TOP" || textField.text == "BOTTOM") {
             textField.text = ""
         }
+        textField.autocorrectionType = .no
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -128,15 +136,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK - Meme object
     func save(_ memedImage: UIImage) {
-        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: memedImage)
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage())
         
+        /*
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        */
     }
     
     func generateMemedImage() -> UIImage {
         // Hide stuff
+        toolbarBottom.isHidden = true
         
         // Render view to image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -144,17 +155,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
+        // Show stuff
+        toolbarBottom.isHidden = false
+        
         return memedImage
     }
     
     @IBAction func shareAction(_ sender: Any) {
         print("Share!")
-        /*
-         - generate a memed image
-         - define an instance of the ActivityViewController
-         - pass the ActivityViewController a memedImage as an activity item
-         - present the ActivityViewController
-         */
+        // generate a memed image
+        let memeImage = generateMemedImage()
+        // define an instance of the ActivityViewController
+        // pass the ActivityViewController a memedImage as an activity item
+        let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        // present the ActivityViewController
+        present(controller, animated: true, completion: nil)
+        // save meme
+        // dismiss ActivityViewController
+        controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+            if completed == true {
+                self.save(memeImage)
+                print("Saved")
+            }
+        }
+    }
+    
+}
+
+extension UIColor {
+    convenience init(hexString: String) {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt32()
+        Scanner(string: hex).scanHexInt32(&int)
+        let a, r, g, b: UInt32
+        switch hex.characters.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
 
