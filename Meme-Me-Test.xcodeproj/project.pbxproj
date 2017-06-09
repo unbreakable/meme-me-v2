@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8139F34D1EEB56C100BCDD3B /* AATypewriter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F3461EEB56C100BCDD3B /* AATypewriter.ttf */; };
+		8139F34E1EEB56C100BCDD3B /* AdobeGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F3471EEB56C100BCDD3B /* AdobeGothicBold.otf */; };
+		8139F34F1EEB56C100BCDD3B /* CooperBlackStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F3481EEB56C100BCDD3B /* CooperBlackStd.otf */; };
+		8139F3501EEB56C100BCDD3B /* HoboStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F3491EEB56C100BCDD3B /* HoboStd.otf */; };
+		8139F3511EEB56C100BCDD3B /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34A1EEB56C100BCDD3B /* Impact.ttf */; };
+		8139F3521EEB56C100BCDD3B /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */; };
+		8139F3531EEB56C100BCDD3B /* Whoa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34C1EEB56C100BCDD3B /* Whoa.ttf */; };
 		81AC28781EE59F2100F8B415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC28771EE59F2100F8B415 /* AppDelegate.swift */; };
 		81AC287A1EE59F2100F8B415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC28791EE59F2100F8B415 /* ViewController.swift */; };
 		81AC287D1EE59F2100F8B415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AC287B1EE59F2100F8B415 /* Main.storyboard */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8139F3461EEB56C100BCDD3B /* AATypewriter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AATypewriter.ttf; path = Fonts/AATypewriter.ttf; sourceTree = "<group>"; };
+		8139F3471EEB56C100BCDD3B /* AdobeGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AdobeGothicBold.otf; path = Fonts/AdobeGothicBold.otf; sourceTree = "<group>"; };
+		8139F3481EEB56C100BCDD3B /* CooperBlackStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CooperBlackStd.otf; path = Fonts/CooperBlackStd.otf; sourceTree = "<group>"; };
+		8139F3491EEB56C100BCDD3B /* HoboStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HoboStd.otf; path = Fonts/HoboStd.otf; sourceTree = "<group>"; };
+		8139F34A1EEB56C100BCDD3B /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Impact.ttf; path = Fonts/Impact.ttf; sourceTree = "<group>"; };
+		8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "Fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		8139F34C1EEB56C100BCDD3B /* Whoa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Whoa.ttf; path = Fonts/Whoa.ttf; sourceTree = "<group>"; };
 		81AC28741EE59F2100F8B415 /* Meme-Me-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme-Me-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AC28771EE59F2100F8B415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81AC28791EE59F2100F8B415 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +51,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8139F3451EEB568F00BCDD3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8139F3461EEB56C100BCDD3B /* AATypewriter.ttf */,
+				8139F3471EEB56C100BCDD3B /* AdobeGothicBold.otf */,
+				8139F3481EEB56C100BCDD3B /* CooperBlackStd.otf */,
+				8139F3491EEB56C100BCDD3B /* HoboStd.otf */,
+				8139F34A1EEB56C100BCDD3B /* Impact.ttf */,
+				8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */,
+				8139F34C1EEB56C100BCDD3B /* Whoa.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		81AC286B1EE59F2100F8B415 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +84,7 @@
 		81AC28761EE59F2100F8B415 /* Meme-Me-Test */ = {
 			isa = PBXGroup;
 			children = (
+				8139F3451EEB568F00BCDD3B /* Resources */,
 				81AC28771EE59F2100F8B415 /* AppDelegate.swift */,
 				81AC28791EE59F2100F8B415 /* ViewController.swift */,
 				81BE56401EE89AA200E06F87 /* Meme.swift */,
@@ -128,8 +157,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AC28821EE59F2100F8B415 /* LaunchScreen.storyboard in Resources */,
+				8139F3531EEB56C100BCDD3B /* Whoa.ttf in Resources */,
+				8139F3521EEB56C100BCDD3B /* Oswald-Regular.ttf in Resources */,
+				8139F34D1EEB56C100BCDD3B /* AATypewriter.ttf in Resources */,
+				8139F34E1EEB56C100BCDD3B /* AdobeGothicBold.otf in Resources */,
 				81AC287F1EE59F2100F8B415 /* Assets.xcassets in Resources */,
+				8139F3511EEB56C100BCDD3B /* Impact.ttf in Resources */,
+				8139F3501EEB56C100BCDD3B /* HoboStd.otf in Resources */,
 				81AC287D1EE59F2100F8B415 /* Main.storyboard in Resources */,
+				8139F34F1EEB56C100BCDD3B /* CooperBlackStd.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
