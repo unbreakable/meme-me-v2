@@ -38,12 +38,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerControllerJK.delegate = self
         
         // Text set-up
-        topText.delegate = self
-        topText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .center
-        bottomText.delegate = self
-        bottomText.defaultTextAttributes = memeTextAttributes
-        bottomText.textAlignment = .center
+        configureMemeText(textField: topText)
+        configureMemeText(textField: bottomText)
         setInitialText()
         
         // UI set-up
@@ -188,10 +184,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // save meme and dismiss ActivityViewController
         controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
-            if completed == true {
+            if completed {
                 self.save(memeImage)
             }
         }
+    }
+    
+    func configureMemeText (textField: UITextField) {
+        let memeTextField = textField
+        memeTextField.delegate = self
+        memeTextField.defaultTextAttributes = memeTextAttributes
+        memeTextField.textAlignment = .center
     }
     
     func setInitialText() {
