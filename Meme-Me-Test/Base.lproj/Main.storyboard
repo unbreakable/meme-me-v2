@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AATypewriter.ttf">
-            <string>AATypewriter</string>
-        </array>
         <array key="Impact.ttf">
             <string>Impact</string>
         </array>
@@ -33,23 +30,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-m6-MTK">
                                 <rect key="frame" x="0.0" y="-10" width="375" height="687"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1ZF-ct-Qb1">
-                                <rect key="frame" x="37.5" y="70" width="300" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="iMe-6Y-6AQ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="v8e-nR-lf3"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1ZF-ct-Qb1">
+                                <rect key="frame" x="18" y="64" width="339" height="21"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="17w-7e-lYU">
-                                <rect key="frame" x="18" y="550" width="339" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="C6z-jw-Tpf"/>
-                                </constraints>
+                                <rect key="frame" x="18" y="582" width="339" height="21"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AATypewriter" family="AATypewriter" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLM-tQ-DH3">
@@ -87,25 +77,33 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="MemeMe 1.0" id="lYr-3Z-EwB"/>
+                                    <navigationItem title="MemeMe 1.0" id="lYr-3Z-EwB">
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="0u7-jZ-IJ2">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="resetToInitialState:" destination="BYZ-38-t0r" id="MN0-X6-lUD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1ZF-ct-Qb1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="02l-lF-ukh"/>
+                            <constraint firstItem="1ZF-ct-Qb1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Xx-42-9PF"/>
+                            <constraint firstItem="xLM-tQ-DH3" firstAttribute="top" secondItem="17w-7e-lYU" secondAttribute="bottom" constant="20" id="4ai-71-Hhe"/>
                             <constraint firstItem="4eN-1E-bBm" firstAttribute="leading" secondItem="xLM-tQ-DH3" secondAttribute="leading" id="55p-Ca-tmQ"/>
-                            <constraint firstItem="1ZF-ct-Qb1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5Ex-iU-YdQ"/>
-                            <constraint firstItem="xLM-tQ-DH3" firstAttribute="top" secondItem="17w-7e-lYU" secondAttribute="bottom" constant="50" id="8fT-WT-SDY"/>
                             <constraint firstItem="rN7-m6-MTK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8v5-vf-pVK"/>
                             <constraint firstItem="4eN-1E-bBm" firstAttribute="trailing" secondItem="xLM-tQ-DH3" secondAttribute="trailing" id="9AN-0P-lDQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9pr-8n-heQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFH-KT-IEv"/>
                             <constraint firstItem="rN7-m6-MTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-30" id="KUh-QH-7yH"/>
+                            <constraint firstItem="1ZF-ct-Qb1" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="VpY-L7-MoK"/>
                             <constraint firstAttribute="trailing" secondItem="rN7-m6-MTK" secondAttribute="trailing" id="Zd5-6D-aFQ"/>
                             <constraint firstItem="4eN-1E-bBm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h0d-ni-GHd"/>
                             <constraint firstItem="17w-7e-lYU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jb7-cQ-PLP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rN7-m6-MTK" secondAttribute="bottom" constant="-10" id="nfl-Lx-Iew"/>
+                            <constraint firstItem="1ZF-ct-Qb1" firstAttribute="top" secondItem="4eN-1E-bBm" secondAttribute="bottom" constant="20" id="pL4-nE-yDw"/>
                             <constraint firstItem="17w-7e-lYU" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="sQE-yO-7sa"/>
                             <constraint firstAttribute="trailing" secondItem="xLM-tQ-DH3" secondAttribute="trailing" id="vE2-Xz-Ntb"/>
                         </constraints>
@@ -113,6 +111,7 @@
                     <connections>
                         <outlet property="bottomText" destination="17w-7e-lYU" id="VHH-RA-jKX"/>
                         <outlet property="cameraButton" destination="JPa-lr-x2Q" id="R0f-Uv-Cmb"/>
+                        <outlet property="cancelButton" destination="0u7-jZ-IJ2" id="Z0V-ov-PJ6"/>
                         <outlet property="imageViewJK" destination="rN7-m6-MTK" id="PWw-fU-FdA"/>
                         <outlet property="navBar" destination="4eN-1E-bBm" id="Ooe-sF-z72"/>
                         <outlet property="shareButton" destination="UCw-aP-B8Y" id="5sQ-N7-SrZ"/>

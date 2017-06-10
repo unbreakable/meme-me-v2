@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Meme-Me-Test
+//  Meme-Me-1.0
 //
 //  Created by JFK on 6/5/17.
 //  Copyright © 2017 Jonathan Kaufman. All rights reserved.
@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    // MARK: Outlets
     @IBOutlet weak var imageViewJK: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
@@ -17,7 +18,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolbarBottom: UIToolbar!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
 
+    // MARK: Vars
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
     let memeTextAttributes: [String : Any] = [
@@ -28,43 +31,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             // Impact, Oswald, AATypewriter, AdobeGothicStd-Bold, CooperBlackStd, HoboStd, Whoa!
         NSStrokeWidthAttributeName: -3.0
     ]
-
+    
+    // MARK: Standard methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*
-        // Get "real" names for custom fonts
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-        */
-        
         pickerControllerJK.delegate = self
         
+        // Text set-up
         topText.delegate = self
-        topText.text = "TOP"
         topText.defaultTextAttributes = memeTextAttributes
         topText.textAlignment = .center
-        
         bottomText.delegate = self
-        bottomText.text = "BOTTOM"
         bottomText.defaultTextAttributes = memeTextAttributes
         bottomText.textAlignment = .center
+        setInitialText()
         
+        // UI set-up
         shareButton.isEnabled = false
-        
-        // Set colors for top and bottom bars
+        imageViewJK.backgroundColor = UIColor(hexString: "#333333")
         toolbarBottom.barTintColor = UIColor(hexString: "#4097A3")
-        //toolbarBottom.sizeToFit() // thought this was needed but apparently not
         navBar.barTintColor = UIColor(hexString: "#4097A3")
     }
     
-    // MARK - Standard methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
@@ -76,17 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
-    // MARK - Image picker
-    @IBAction func pickImage(_ sender: Any) {
-        pickerControllerJK.sourceType = .photoLibrary
-        present(pickerControllerJK, animated: true, completion: nil)
-    }
-    
-    @IBAction func pickCameraImage(_ sender: Any) {
-        pickerControllerJK.sourceType = .camera
-        present(pickerControllerJK, animated: true, completion: nil)
-    }
-    
+    // MARK: Image methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             print("Error")
@@ -111,11 +89,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK - Text Field Delegate
+    // MARK: Text Field Delegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField.text == "TOP" || textField.text == "BOTTOM") {
             textField.text = ""
         }
+        
+        // Did this because autocorrect kept grabbing final character and autocorrecting it to some other random character...
         textField.autocorrectionType = .no
     }
     
@@ -124,7 +104,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
-    // MARK - Keyboard slide out of the way
+    // MARK: Keyboard slides
     func keyboardWillShow(_ notification:Notification) {
         if bottomText.isFirstResponder {
             view.frame.origin.y = getKeyboardHeight( notification ) * -1
@@ -152,7 +132,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // MARK - Meme object
+    // MARK: Meme object
     func save(_ memedImage: UIImage) {
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage())
         
@@ -164,6 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         // Hide stuff
         toolbarBottom.isHidden = true
+        navBar.isHidden = true
         
         // Render view to image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -173,31 +154,53 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         // Show stuff
         toolbarBottom.isHidden = false
+        navBar.isHidden = false
         
         return memedImage
     }
     
+    // MARK: Image picker actions
+    @IBAction func pickImage(_ sender: Any) {
+        pickerControllerJK.sourceType = .photoLibrary
+        present(pickerControllerJK, animated: true, completion: nil)
+    }
+    
+    @IBAction func pickCameraImage(_ sender: Any) {
+        pickerControllerJK.sourceType = .camera
+        present(pickerControllerJK, animated: true, completion: nil)
+    }
+    
+    // MARK: Other app actions and abstractions
+    @IBAction func resetToInitialState(_ sender: Any) {
+        setInitialText()
+        imageViewJK.image = nil
+    }
+    
     @IBAction func shareAction(_ sender: Any) {
-        print("Share!")
         // generate a memed image
         let memeImage = generateMemedImage()
-        // define an instance of the ActivityViewController
-        // pass the ActivityViewController a memedImage as an activity item
+        
+        // define an instance of the ActivityViewController AND pass a memedImage as an activity item
         let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        
         // present the ActivityViewController
         present(controller, animated: true, completion: nil)
-        // save meme
-        // dismiss ActivityViewController
+        
+        // save meme and dismiss ActivityViewController
         controller.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if completed == true {
                 self.save(memeImage)
-                print("Saved")
             }
         }
     }
     
+    func setInitialText() {
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+    }
 }
 
+// MARK: UIColor by Hex extension
 // Added this extension (discovered on StackOverflow) to more easily use hex values to set UI colors
 extension UIColor {
     convenience init(hexString: String) {
