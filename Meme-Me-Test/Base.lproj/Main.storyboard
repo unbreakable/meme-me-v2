@@ -18,7 +18,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_Me_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_Me_1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-m6-MTK">
-                                <rect key="frame" x="0.0" y="-10" width="375" height="687"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="677"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1ZF-ct-Qb1">
                                 <rect key="frame" x="18" y="64" width="339" height="21"/>
@@ -97,7 +97,7 @@
                             <constraint firstItem="4eN-1E-bBm" firstAttribute="trailing" secondItem="xLM-tQ-DH3" secondAttribute="trailing" id="9AN-0P-lDQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9pr-8n-heQ"/>
                             <constraint firstItem="xLM-tQ-DH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFH-KT-IEv"/>
-                            <constraint firstItem="rN7-m6-MTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-30" id="KUh-QH-7yH"/>
+                            <constraint firstItem="rN7-m6-MTK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="KUh-QH-7yH"/>
                             <constraint firstItem="1ZF-ct-Qb1" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="VpY-L7-MoK"/>
                             <constraint firstAttribute="trailing" secondItem="rN7-m6-MTK" secondAttribute="trailing" id="Zd5-6D-aFQ"/>
                             <constraint firstItem="4eN-1E-bBm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h0d-ni-GHd"/>
