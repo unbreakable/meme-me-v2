@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeCreatorViewController.swift
 //  Meme-Me-1.0
 //
 //  Created by JFK on 6/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var imageViewJK: UIImageView!
