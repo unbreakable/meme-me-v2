@@ -20,7 +20,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
 
-    // MARK: Vars
+    // MARK: Vars and Constants
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
     let memeTextAttributes: [String : Any] = [
