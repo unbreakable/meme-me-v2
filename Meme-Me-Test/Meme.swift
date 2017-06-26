@@ -1,6 +1,6 @@
 //
 //  Meme.swift
-//  Meme-Me-Test
+//  Meme-Me-2
 //
 //  Created by JFK on 6/7/17.
 //  Copyright © 2017 Jonathan Kaufman. All rights reserved.

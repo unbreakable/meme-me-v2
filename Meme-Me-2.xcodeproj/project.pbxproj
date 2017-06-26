@@ -30,7 +30,7 @@
 		8139F34A1EEB56C100BCDD3B /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Impact.ttf; path = Fonts/Impact.ttf; sourceTree = "<group>"; };
 		8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "Fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		8139F34C1EEB56C100BCDD3B /* Whoa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Whoa.ttf; path = Fonts/Whoa.ttf; sourceTree = "<group>"; };
-		81AC28741EE59F2100F8B415 /* Meme-Me-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme-Me-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AC28741EE59F2100F8B415 /* Meme-Me-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme-Me-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AC28771EE59F2100F8B415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81AC28791EE59F2100F8B415 /* MemeCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCreatorViewController.swift; sourceTree = "<group>"; };
 		81AC287C1EE59F2100F8B415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		81AC286B1EE59F2100F8B415 = {
 			isa = PBXGroup;
 			children = (
-				81AC28761EE59F2100F8B415 /* Meme-Me-1 */,
+				81AC28761EE59F2100F8B415 /* Meme-Me-2 */,
 				81AC28751EE59F2100F8B415 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,12 +76,12 @@
 		81AC28751EE59F2100F8B415 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81AC28741EE59F2100F8B415 /* Meme-Me-1.app */,
+				81AC28741EE59F2100F8B415 /* Meme-Me-2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81AC28761EE59F2100F8B415 /* Meme-Me-1 */ = {
+		81AC28761EE59F2100F8B415 /* Meme-Me-2 */ = {
 			isa = PBXGroup;
 			children = (
 				8139F3451EEB568F00BCDD3B /* Resources */,
@@ -93,16 +93,16 @@
 				81AC28801EE59F2100F8B415 /* LaunchScreen.storyboard */,
 				81AC28831EE59F2100F8B415 /* Info.plist */,
 			);
-			name = "Meme-Me-1";
+			name = "Meme-Me-2";
 			path = "Meme-Me-Test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		81AC28731EE59F2100F8B415 /* Meme-Me-1 */ = {
+		81AC28731EE59F2100F8B415 /* Meme-Me-2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81AC28861EE59F2100F8B415 /* Build configuration list for PBXNativeTarget "Meme-Me-1" */;
+			buildConfigurationList = 81AC28861EE59F2100F8B415 /* Build configuration list for PBXNativeTarget "Meme-Me-2" */;
 			buildPhases = (
 				81AC28701EE59F2100F8B415 /* Sources */,
 				81AC28711EE59F2100F8B415 /* Frameworks */,
@@ -112,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = "Meme-Me-1";
+			name = "Meme-Me-2";
 			productName = "Meme-Me-Test";
-			productReference = 81AC28741EE59F2100F8B415 /* Meme-Me-1.app */;
+			productReference = 81AC28741EE59F2100F8B415 /* Meme-Me-2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 81AC286F1EE59F2100F8B415 /* Build configuration list for PBXProject "Meme-Me-1" */;
+			buildConfigurationList = 81AC286F1EE59F2100F8B415 /* Build configuration list for PBXProject "Meme-Me-2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -147,7 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				81AC28731EE59F2100F8B415 /* Meme-Me-1 */,
+				81AC28731EE59F2100F8B415 /* Meme-Me-2 */,
 			);
 		};
 /* End PBXProject section */
@@ -305,7 +305,7 @@
 				DEVELOPMENT_TEAM = 4B5G8PA32L;
 				INFOPLIST_FILE = "Meme-Me-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -318,7 +318,7 @@
 				DEVELOPMENT_TEAM = 4B5G8PA32L;
 				INFOPLIST_FILE = "Meme-Me-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		81AC286F1EE59F2100F8B415 /* Build configuration list for PBXProject "Meme-Me-1" */ = {
+		81AC286F1EE59F2100F8B415 /* Build configuration list for PBXProject "Meme-Me-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				81AC28841EE59F2100F8B415 /* Debug */,
@@ -336,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81AC28861EE59F2100F8B415 /* Build configuration list for PBXNativeTarget "Meme-Me-1" */ = {
+		81AC28861EE59F2100F8B415 /* Build configuration list for PBXNativeTarget "Meme-Me-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				81AC28871EE59F2100F8B415 /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Meme-Me-Test
+//  Meme-Me-2
 //
 //  Created by JFK on 6/5/17.
 //  Copyright © 2017 Jonathan Kaufman. All rights reserved.

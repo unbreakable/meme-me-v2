@@ -1,6 +1,6 @@
 //
 //  MemeCreatorViewController.swift
-//  Meme-Me-1.0
+//  Meme-Me-2.0
 //
 //  Created by JFK on 6/5/17.
 //  Copyright © 2017 Jonathan Kaufman. All rights reserved.
