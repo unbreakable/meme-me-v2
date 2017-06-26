@@ -19,7 +19,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var toolbarBottom: UIToolbar!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
-
+    
     // MARK: Vars and Constants
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
@@ -170,6 +170,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func resetToInitialState(_ sender: Any) {
         setInitialText()
         imageViewJK.image = nil
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func shareAction(_ sender: Any) {
@@ -201,6 +202,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
     }
+    
 }
 
 // MARK: UIColor by Hex extension

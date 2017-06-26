@@ -14,12 +14,16 @@
 		8139F3511EEB56C100BCDD3B /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34A1EEB56C100BCDD3B /* Impact.ttf */; };
 		8139F3521EEB56C100BCDD3B /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */; };
 		8139F3531EEB56C100BCDD3B /* Whoa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8139F34C1EEB56C100BCDD3B /* Whoa.ttf */; };
+		8165A1821F01A17000097126 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165A1811F01A17000097126 /* MemeDetailViewController.swift */; };
 		81AC28781EE59F2100F8B415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC28771EE59F2100F8B415 /* AppDelegate.swift */; };
 		81AC287A1EE59F2100F8B415 /* MemeCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC28791EE59F2100F8B415 /* MemeCreatorViewController.swift */; };
 		81AC287D1EE59F2100F8B415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AC287B1EE59F2100F8B415 /* Main.storyboard */; };
 		81AC287F1EE59F2100F8B415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AC287E1EE59F2100F8B415 /* Assets.xcassets */; };
 		81AC28821EE59F2100F8B415 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AC28801EE59F2100F8B415 /* LaunchScreen.storyboard */; };
 		81BE56411EE89AA200E06F87 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BE56401EE89AA200E06F87 /* Meme.swift */; };
+		81C71CF21F01798E00500037 /* MemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C71CF11F01798E00500037 /* MemeCollectionViewController.swift */; };
+		81C71CF41F0179A600500037 /* MemeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C71CF31F0179A600500037 /* MemeCellViewController.swift */; };
+		81C71CF61F017A9600500037 /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C71CF51F017A9600500037 /* MemeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,7 @@
 		8139F34A1EEB56C100BCDD3B /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Impact.ttf; path = Fonts/Impact.ttf; sourceTree = "<group>"; };
 		8139F34B1EEB56C100BCDD3B /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-Regular.ttf"; path = "Fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		8139F34C1EEB56C100BCDD3B /* Whoa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Whoa.ttf; path = Fonts/Whoa.ttf; sourceTree = "<group>"; };
+		8165A1811F01A17000097126 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		81AC28741EE59F2100F8B415 /* Meme-Me-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme-Me-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AC28771EE59F2100F8B415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81AC28791EE59F2100F8B415 /* MemeCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCreatorViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		81AC28811EE59F2100F8B415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81AC28831EE59F2100F8B415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BE56401EE89AA200E06F87 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		81C71CF11F01798E00500037 /* MemeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewController.swift; sourceTree = "<group>"; };
+		81C71CF31F0179A600500037 /* MemeCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCellViewController.swift; sourceTree = "<group>"; };
+		81C71CF51F017A9600500037 /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,10 @@
 				8139F3451EEB568F00BCDD3B /* Resources */,
 				81AC28771EE59F2100F8B415 /* AppDelegate.swift */,
 				81AC28791EE59F2100F8B415 /* MemeCreatorViewController.swift */,
+				81C71CF51F017A9600500037 /* MemeTableViewController.swift */,
+				81C71CF11F01798E00500037 /* MemeCollectionViewController.swift */,
+				81C71CF31F0179A600500037 /* MemeCellViewController.swift */,
+				8165A1811F01A17000097126 /* MemeDetailViewController.swift */,
 				81BE56401EE89AA200E06F87 /* Meme.swift */,
 				81AC287B1EE59F2100F8B415 /* Main.storyboard */,
 				81AC287E1EE59F2100F8B415 /* Assets.xcassets */,
@@ -177,8 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C71CF21F01798E00500037 /* MemeCollectionViewController.swift in Sources */,
 				81BE56411EE89AA200E06F87 /* Meme.swift in Sources */,
 				81AC287A1EE59F2100F8B415 /* MemeCreatorViewController.swift in Sources */,
+				81C71CF61F017A9600500037 /* MemeTableViewController.swift in Sources */,
+				8165A1821F01A17000097126 /* MemeDetailViewController.swift in Sources */,
+				81C71CF41F0179A600500037 /* MemeCellViewController.swift in Sources */,
 				81AC28781EE59F2100F8B415 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,6 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.unbreakablelabs.Meme-Me-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
