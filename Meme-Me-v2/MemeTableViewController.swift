@@ -37,11 +37,7 @@ class MemeTableViewController: UITableViewController {
         
         let topText = aMeme.topText
         let bottomText = aMeme.bottomText
-        cell.textLabel?.text = "\(topText) " + "\(bottomText)"
-        
-        if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = "Test details"
-        }
+        cell.textLabel?.text = "\(topText)..." + "\(bottomText)"
         
         return cell
     }

@@ -188,6 +188,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
             if completed {
                 self.save(memeImage)
             }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
