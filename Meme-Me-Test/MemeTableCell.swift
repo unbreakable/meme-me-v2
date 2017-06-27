@@ -1,5 +1,5 @@
 //
-//  MemeCollectionCell.swift
+//  MemeTableCell.swift
 //  Meme-Me-2
 //
 //  Created by JFK on 6/26/17.
@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-// MARK: MemeCollectionCell
+// MARK: MemeTableCell
 
-class MemeCollectionCell: UICollectionViewCell {
+class MemeTableCell: UITableViewCell {
     
     // Outlets
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var memeText: UILabel!
     
 }

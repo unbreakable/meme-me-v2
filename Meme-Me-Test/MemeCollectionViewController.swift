@@ -11,9 +11,10 @@ import UIKit
 
 // MARK: MemeCollectionViewController
 
-class MemeCollectionViewController: UICollectionViewController {
+class MemeCollectionViewController: UICollectionViewController, UITextFieldDelegate {
     
     // MARK: Properties
+    
     var memes: [Meme] {
         get {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -21,10 +22,28 @@ class MemeCollectionViewController: UICollectionViewController {
         }
     }
     
+    let memeTextAttributes: [String : Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName: UIFont(name: "Impact", size: 10)!,
+        NSStrokeWidthAttributeName: -3.0
+    ]
+    
     // MARK: Outlets
+    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    // MARK: Methods
+    
+    func configureMemeText (textField: UITextField) {
+        let memeTextField = textField
+        memeTextField.delegate = self
+        memeTextField.defaultTextAttributes = memeTextAttributes
+        memeTextField.textAlignment = .center
+    }
+    
     // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +70,11 @@ class MemeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! MemeCollectionCell
         let aMeme = self.memes[(indexPath as NSIndexPath).row]
-        cell.memeImage?.image = aMeme.memedImageJK
+        cell.memeImage?.image = aMeme.originalImage
+        cell.topTextField.text = aMeme.topText
+        cell.bottomTextField.text = aMeme.bottomText
+        configureMemeText(textField: cell.topTextField)
+        configureMemeText(textField: cell.bottomTextField)
         
         return cell
     }
