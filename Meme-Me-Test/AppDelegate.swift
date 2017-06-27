@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var memes = [Meme]()
-
+    var currentFont = "Impact"
+    let fontArray = ["AATypewriter", "AdobeGothicStd-Bold","CooperBlackStd","HoboStd","Impact","Oswald","Whoa!"]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

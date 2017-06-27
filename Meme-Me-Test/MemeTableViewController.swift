@@ -18,7 +18,7 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
             return appDelegate.memes
         }
     }
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let memeTextAttributes: [String : Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
@@ -55,12 +55,14 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableCell
         let aMeme = self.memes[(indexPath as NSIndexPath).row]
-        cell.memeImage.image = aMeme.originalImage
+        cell.memeImage.image = aMeme.zoomedNoTextImage
         cell.memeText.text = "\(aMeme.topText)..." + "\(aMeme.bottomText)"
         cell.topTextField.text = aMeme.topText
         cell.bottomTextField.text = aMeme.bottomText
         configureMemeText(textField: cell.topTextField)
         configureMemeText(textField: cell.bottomTextField)
+        cell.topTextField.font = UIFont(name: appDelegate.currentFont, size: 10)!
+        cell.bottomTextField.font = UIFont(name: appDelegate.currentFont, size: 10)!
         
         return cell
     }

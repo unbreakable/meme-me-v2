@@ -8,13 +8,21 @@
 
 import UIKit
 
-class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIScrollViewDelegate {
     
     // MARK: Properties
     var meme: Meme!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // MARK: Outlets
+    // MARK: Outlets for Image
+    @IBOutlet weak var scrollViewForImage: UIScrollView!
     @IBOutlet weak var imageViewJK: UIImageView!
+    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
+    
+    // MARK: Outlets for All Else
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
@@ -30,19 +38,13 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
         NSFontAttributeName: UIFont(name: "Impact", size: 40)!,
-            // Add choices for: 
-            // Impact, Oswald, AATypewriter, AdobeGothicStd-Bold, CooperBlackStd, HoboStd, Whoa!
         NSStrokeWidthAttributeName: -3.0
     ]
     
-    // MARK: Standard methods
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerControllerJK.delegate = self
-        
-        // Text set-up
-        configureMemeText(textField: topText)
-        configureMemeText(textField: bottomText)
         
         if (meme != nil) {
             topText.text = meme.topText
@@ -58,17 +60,62 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         imageViewJK.backgroundColor = UIColor(hexString: "#333333")
         toolbarBottom.barTintColor = UIColor(hexString: "#4097A3")
         navBar.barTintColor = UIColor(hexString: "#4097A3")
+        
+        // Image zooming
+        scrollViewForImage.minimumZoomScale = 1.0
+        scrollViewForImage.maximumZoomScale = 5.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
+        // Text set-up
+        configureMemeText(textField: topText)
+        configureMemeText(textField: bottomText)
+        topText.font = UIFont(name: appDelegate.currentFont, size: 40)!
+        bottomText.font = UIFont(name: appDelegate.currentFont, size: 40)!
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    // MARK: Image Zooming
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageViewJK
+    }
+    
+    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
+        let widthScale = size.width / imageViewJK.bounds.width
+        let heightScale = size.height / imageViewJK.bounds.height
+        let minScale = min(widthScale, heightScale)
+        
+        scrollViewForImage.minimumZoomScale = minScale
+        
+        scrollViewForImage.zoomScale = minScale
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        updateMinZoomScaleForSize(view.bounds.size)
+    }
+    
+    fileprivate func updateConstraintsForSize(_ size: CGSize) {
+        
+        let yOffset = max(0, (size.height - imageViewJK.frame.height) / 2)
+        imageViewTopConstraint.constant = yOffset
+        imageViewBottomConstraint.constant = yOffset
+        
+        let xOffset = max(0, (size.width - imageViewJK.frame.width) / 2)
+        imageViewLeadingConstraint.constant = xOffset
+        imageViewTrailingConstraint.constant = xOffset
+        
+        view.layoutIfNeeded()
     }
     
     // MARK: Image methods
@@ -141,17 +188,23 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Meme object
     func save(_ memedImage: UIImage) {
-        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage())
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage(withText: true), zoomedNoTextImage: generateMemedImage(withText: false))
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
     }
     
-    func generateMemedImage() -> UIImage {
+    func generateMemedImage(withText: Bool) -> UIImage {
         // Hide stuff
         toolbarBottom.isHidden = true
         navBar.isHidden = true
+        
+        // Described in Meme.swift, but this is the part that saves the zoomed/noText version
+        if !withText {
+            topText.isHidden = true
+            bottomText.isHidden = true
+        }
         
         // Render view to image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -159,9 +212,11 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // Show stuff
+        // Show stuff after image capture
         toolbarBottom.isHidden = false
         navBar.isHidden = false
+        topText.isHidden = false
+        bottomText.isHidden = false
         
         return memedImage
     }
@@ -185,13 +240,8 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        // generate a memed image
-        let memeImage = generateMemedImage()
-        
-        // define an instance of the ActivityViewController AND pass a memedImage as an activity item
+        let memeImage = generateMemedImage(withText: true)
         let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
-        
-        // present the ActivityViewController
         present(controller, animated: true, completion: nil)
         
         // save meme and dismiss ActivityViewController

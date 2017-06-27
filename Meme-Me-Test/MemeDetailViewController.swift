@@ -17,7 +17,7 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var memeImage: UIImageView!
     
     // MARK: Actions
-    @IBAction func editMeme() {
+    func editMeme() {
         performSegue(withIdentifier: "editMemeSegue", sender: self)
     }
     
