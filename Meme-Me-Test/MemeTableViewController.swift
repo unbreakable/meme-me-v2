@@ -37,7 +37,15 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Sent Memes"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         tableView.reloadData()
         self.tabBarController?.tabBar.isHidden = false
     }
