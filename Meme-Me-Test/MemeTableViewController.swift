@@ -39,26 +39,22 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Sent Memes"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tableView.reloadData()
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(memes.count)
         return memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableCell
         let aMeme = self.memes[(indexPath as NSIndexPath).row]
-        //cell.imageView?.image = imageWithImage(image: aMeme.memedImageJK, scaledToSize: CGSize(width: 100, height: 80))
         cell.memeImage.image = aMeme.memedImageJK
         cell.memeText.text = "\(aMeme.topText)..." + "\(aMeme.bottomText)"
         cell.topTextField.text = aMeme.topText
@@ -75,14 +71,16 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
         self.navigationController!.pushViewController(detailController, animated: true)
     }
     
-    // MARK: Other methods
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
-    func imageWithImage(image:UIImage,scaledToSize newSize:CGSize)->UIImage{
-        UIGraphicsBeginImageContext( newSize )
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage!.withRenderingMode(.automatic)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }
