@@ -40,6 +40,10 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ory-YF-ReI">
                                             <rect key="frame" x="0.0" y="0.0" width="107" height="105"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="105" id="5Wu-4t-Ufk"/>
+                                                <constraint firstAttribute="width" constant="107" id="yNq-eT-T6E"/>
+                                            </constraints>
                                         </imageView>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-fO-fso">
                                             <rect key="frame" x="5" y="77" width="97" height="28"/>
@@ -137,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgJ-ay-eg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5" y="-721.5"/>
+            <point key="canvasLocation" x="1526" y="-656"/>
         </scene>
         <!--MemeCreatorViewController-->
         <scene sceneID="tne-QT-ifu">
