@@ -10,6 +10,9 @@ import UIKit
 
 class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    // MARK: Properties
+    var meme: Meme!
+    
     // MARK: Outlets
     @IBOutlet weak var imageViewJK: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -40,10 +43,18 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         // Text set-up
         configureMemeText(textField: topText)
         configureMemeText(textField: bottomText)
-        setInitialText()
         
-        // UI set-up
-        shareButton.isEnabled = false
+        if (meme != nil) {
+            topText.text = meme.topText
+            bottomText.text = meme.bottomText
+            imageViewJK.image = meme.originalImage
+            shareButton.isEnabled = true
+        } else {
+            setInitialText()
+            shareButton.isEnabled = false
+        }
+        
+        // Color set-up
         imageViewJK.backgroundColor = UIColor(hexString: "#333333")
         toolbarBottom.barTintColor = UIColor(hexString: "#4097A3")
         navBar.barTintColor = UIColor(hexString: "#4097A3")

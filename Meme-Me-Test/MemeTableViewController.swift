@@ -55,7 +55,7 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableCell
         let aMeme = self.memes[(indexPath as NSIndexPath).row]
-        cell.memeImage.image = aMeme.memedImageJK
+        cell.memeImage.image = aMeme.originalImage
         cell.memeText.text = "\(aMeme.topText)..." + "\(aMeme.bottomText)"
         cell.topTextField.text = aMeme.topText
         cell.bottomTextField.text = aMeme.bottomText

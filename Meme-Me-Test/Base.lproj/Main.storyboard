@@ -20,7 +20,7 @@
         <scene sceneID="abF-da-ujT">
             <objects>
                 <collectionViewController id="6qc-0W-hWR" customClass="MemeCollectionViewController" customModule="Meme_Me_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zi1-tg-TbM">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Zi1-tg-TbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,6 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="memeImage" destination="hbm-KQ-pRm" id="cje-J6-LxH"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="editMemeSegue" id="VPR-C6-cYM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgJ-ay-eg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="99"/>
+            <point key="canvasLocation" x="1487" y="124"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SKE-ST-mpH">
@@ -274,7 +275,7 @@
             <objects>
                 <navigationController id="yfc-v4-ic8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" id="Wmu-Dg-EGK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRR-zl-W6l">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fRR-zl-W6l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -291,7 +292,7 @@
             <objects>
                 <navigationController id="88y-UQ-dtI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="table_30x30" id="uIg-At-wY8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuV-Ee-Icj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IuV-Ee-Icj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -404,6 +405,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uhc-kb-MIn"/>
+        <segue reference="VPR-C6-cYM"/>
     </inferredMetricsTieBreakers>
 </document>
