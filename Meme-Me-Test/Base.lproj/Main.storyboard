@@ -20,7 +20,7 @@
         <scene sceneID="abF-da-ujT">
             <objects>
                 <collectionViewController id="6qc-0W-hWR" customClass="MemeCollectionViewController" customModule="Meme_Me_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Zi1-tg-TbM">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zi1-tg-TbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,7 @@
                                                 <constraint firstAttribute="width" constant="107" id="yNq-eT-T6E"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-fO-fso">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-fO-fso">
                                             <rect key="frame" x="5" y="77" width="97" height="28"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -58,7 +58,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="BVJ-ef-eHE">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="BVJ-ef-eHE">
                                             <rect key="frame" x="5" y="0.0" width="97" height="28"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -274,7 +274,7 @@
             <objects>
                 <navigationController id="yfc-v4-ic8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" id="Wmu-Dg-EGK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fRR-zl-W6l">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRR-zl-W6l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -291,7 +291,7 @@
             <objects>
                 <navigationController id="88y-UQ-dtI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="table_30x30" id="uIg-At-wY8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IuV-Ee-Icj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuV-Ee-Icj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -326,7 +326,7 @@
                                                 <constraint firstAttribute="width" constant="94" id="Siz-NL-iUJ"/>
                                             </constraints>
                                         </imageView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="MtK-ra-kf4">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="MtK-ra-kf4">
                                             <rect key="frame" x="-3" y="3" width="97" height="17"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -344,7 +344,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-LJ-6If">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-LJ-6If">
                                             <rect key="frame" x="-3" y="51" width="97" height="28"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -404,6 +404,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uhc-kb-MIn"/>
+        <segue reference="wfJ-cx-UPU"/>
     </inferredMetricsTieBreakers>
 </document>
