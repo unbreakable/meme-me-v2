@@ -20,7 +20,7 @@
         <scene sceneID="abF-da-ujT">
             <objects>
                 <collectionViewController id="6qc-0W-hWR" customClass="MemeCollectionViewController" customModule="Meme_Me_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zi1-tg-TbM">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Zi1-tg-TbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,8 +273,8 @@
         <scene sceneID="3xJ-fG-0OK">
             <objects>
                 <navigationController id="yfc-v4-ic8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="Wmu-Dg-EGK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRR-zl-W6l">
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" id="Wmu-Dg-EGK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fRR-zl-W6l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -290,8 +290,8 @@
         <scene sceneID="YEa-0c-aZ9">
             <objects>
                 <navigationController id="88y-UQ-dtI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="uIg-At-wY8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuV-Ee-Icj">
+                    <tabBarItem key="tabBarItem" title="List" image="table_30x30" id="uIg-At-wY8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IuV-Ee-Icj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -400,6 +400,8 @@
     </scenes>
     <resources>
         <image name="Album-Icon" width="25" height="25"/>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uhc-kb-MIn"/>
