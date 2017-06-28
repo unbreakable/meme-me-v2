@@ -12,6 +12,7 @@ import UIKit
 class MemeDetailViewController: UIViewController {
     // MARK: Properties
     var meme: Meme!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK: Outlets
     @IBOutlet weak var memeImage: UIImageView!
@@ -24,6 +25,7 @@ class MemeDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editView = segue.destination as? MemeCreatorViewController {
             editView.meme = self.meme
+            appDelegate.currentFont = self.meme.memeFont
         }
     }
 

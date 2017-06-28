@@ -147,10 +147,9 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Meme object
     func save(_ memedImage: UIImage) {
-        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage(withText: true), zoomedNoTextImage: generateMemedImage(withText: false))
-        
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageViewJK.image!, memedImageJK: generateMemedImage(withText: true), zoomedNoTextImage: generateMemedImage(withText: false), memeFont: appDelegate.currentFont)
         appDelegate.memes.append(meme)
     }
     

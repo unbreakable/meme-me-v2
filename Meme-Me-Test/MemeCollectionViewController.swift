@@ -26,12 +26,12 @@ class MemeCollectionViewController: UICollectionViewController, UITextFieldDeleg
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     // MARK: Methods
-    func configureMemeText (textField: UITextField, size: CGFloat) {
+    func configureMemeText (textField: UITextField, size: CGFloat, savedMemeFont: String) {
         let memeTextField = textField
         memeTextField.delegate = self
         memeTextField.defaultTextAttributes = appDelegate.memeTextAttributes
         memeTextField.textAlignment = .center
-        memeTextField.font = UIFont(name: appDelegate.currentFont, size: size)!
+        memeTextField.font = UIFont(name: savedMemeFont, size: size)!
     }
     
     // MARK: Lifecycle
@@ -65,8 +65,8 @@ class MemeCollectionViewController: UICollectionViewController, UITextFieldDeleg
         cell.memeImage?.image = aMeme.zoomedNoTextImage
         cell.topTextField.text = aMeme.topText
         cell.bottomTextField.text = aMeme.bottomText
-        configureMemeText(textField: cell.topTextField, size: 10)
-        configureMemeText(textField: cell.bottomTextField, size: 10)
+        configureMemeText(textField: cell.topTextField, size: 10, savedMemeFont: aMeme.memeFont)
+        configureMemeText(textField: cell.bottomTextField, size: 10, savedMemeFont: aMeme.memeFont)
         
         return cell
     }

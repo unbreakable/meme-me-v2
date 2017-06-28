@@ -244,7 +244,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x4S-z5-kXN"/>
-                                    <barButtonItem title="Font" id="6wG-eW-5Pe" userLabel="Font Button">
+                                    <barButtonItem image="Font-Icon" id="6wG-eW-5Pe" userLabel="Font Button">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="HZl-6Y-wc8" kind="popoverPresentation" popoverAnchorBarButtonItem="6wG-eW-5Pe" id="CDv-Yp-4Sd">
@@ -487,6 +487,7 @@
     </scenes>
     <resources>
         <image name="Album-Icon" width="25" height="25"/>
+        <image name="Font-Icon" width="25" height="25"/>
         <image name="collection_30x30" width="30" height="30"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
