@@ -73,42 +73,11 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         unsubscribeFromKeyboardNotifications()
     }
     
-    // MARK: Image Zooming
-    
+    // MARK: Image methods
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageViewJK
     }
     
-    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
-        let widthScale = size.width / imageViewJK.bounds.width
-        let heightScale = size.height / imageViewJK.bounds.height
-        let minScale = min(widthScale, heightScale)
-        
-        scrollViewForImage.minimumZoomScale = minScale
-        
-        scrollViewForImage.zoomScale = minScale
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        updateMinZoomScaleForSize(view.bounds.size)
-    }
-    
-    fileprivate func updateConstraintsForSize(_ size: CGSize) {
-        
-        let yOffset = max(0, (size.height - imageViewJK.frame.height) / 2)
-        imageViewTopConstraint.constant = yOffset
-        imageViewBottomConstraint.constant = yOffset
-        
-        let xOffset = max(0, (size.width - imageViewJK.frame.width) / 2)
-        imageViewLeadingConstraint.constant = xOffset
-        imageViewTrailingConstraint.constant = xOffset
-        
-        view.layoutIfNeeded()
-    }
-    
-    // MARK: Image methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             print("Error")
