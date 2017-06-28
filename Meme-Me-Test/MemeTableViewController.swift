@@ -19,24 +19,17 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let memeTextAttributes: [String : Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "Impact", size: 10)!,
-        NSStrokeWidthAttributeName: -3.0
-    ]
     
     // MARK: Methods
-    
-    func configureMemeText (textField: UITextField) {
+    func configureMemeText (textField: UITextField, size: CGFloat) {
         let memeTextField = textField
         memeTextField.delegate = self
-        memeTextField.defaultTextAttributes = memeTextAttributes
+        memeTextField.defaultTextAttributes = appDelegate.memeTextAttributes
         memeTextField.textAlignment = .center
+        memeTextField.font = UIFont(name: appDelegate.currentFont, size: size)!
     }
     
     // MARK: Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sent Memes"
@@ -59,10 +52,8 @@ class MemeTableViewController: UITableViewController, UITextFieldDelegate {
         cell.memeText.text = "\(aMeme.topText)..." + "\(aMeme.bottomText)"
         cell.topTextField.text = aMeme.topText
         cell.bottomTextField.text = aMeme.bottomText
-        configureMemeText(textField: cell.topTextField)
-        configureMemeText(textField: cell.bottomTextField)
-        cell.topTextField.font = UIFont(name: appDelegate.currentFont, size: 10)!
-        cell.bottomTextField.font = UIFont(name: appDelegate.currentFont, size: 10)!
+        configureMemeText(textField: cell.topTextField, size: 10)
+        configureMemeText(textField: cell.bottomTextField, size: 10)
         
         return cell
     }

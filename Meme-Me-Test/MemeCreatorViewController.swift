@@ -13,6 +13,8 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: Properties
     var meme: Meme!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let notificationName = Notification.Name("NotificationIdentifier")
+    let pickerControllerJK = UIImagePickerController()
     
     // MARK: Outlets for Image
     @IBOutlet weak var scrollViewForImage: UIScrollView!
@@ -30,16 +32,6 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var toolbarBottom: UIToolbar!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
-    
-    // MARK: Vars and Constants
-    let notificationName = Notification.Name("NotificationIdentifier")
-    let pickerControllerJK = UIImagePickerController()
-    let memeTextAttributes: [String : Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "Impact", size: 40)!,
-        NSStrokeWidthAttributeName: -3.0
-    ]
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -72,10 +64,8 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         // Text set-up
-        configureMemeText(textField: topText)
-        configureMemeText(textField: bottomText)
-        topText.font = UIFont(name: appDelegate.currentFont, size: 40)!
-        bottomText.font = UIFont(name: appDelegate.currentFont, size: 40)!
+        configureMemeText(textField: topText, size: 40)
+        configureMemeText(textField: bottomText, size: 40)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -200,7 +190,7 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         toolbarBottom.isHidden = true
         navBar.isHidden = true
         
-        // Described in Meme.swift, but this is the part that saves the zoomed/noText version
+        // Described in Meme.swift in more detail, but this saves the zoomed/noText image
         if !withText {
             topText.isHidden = true
             bottomText.isHidden = true
@@ -253,11 +243,12 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    func configureMemeText (textField: UITextField) {
+    func configureMemeText (textField: UITextField, size: CGFloat) {
         let memeTextField = textField
         memeTextField.delegate = self
-        memeTextField.defaultTextAttributes = memeTextAttributes
+        memeTextField.defaultTextAttributes = appDelegate.memeTextAttributes
         memeTextField.textAlignment = .center
+        memeTextField.font = UIFont(name: appDelegate.currentFont, size: size)!
     }
     
     func setInitialText() {

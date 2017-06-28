@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var memes = [Meme]()
     var currentFont = "Impact"
     let fontArray = ["AATypewriter", "AdobeGothicStd-Bold","CooperBlackStd","HoboStd","Impact","Oswald","Whoa!"]
+    let memeTextAttributes: [String : Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSStrokeWidthAttributeName: -3.0
+    ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
