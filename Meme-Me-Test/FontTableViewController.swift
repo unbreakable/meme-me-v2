@@ -13,7 +13,6 @@ class FontTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
     let memeTextAttributes: [String : Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
@@ -29,19 +28,23 @@ class FontTableViewController: UITableViewController, UITextFieldDelegate {
         memeTextField.textAlignment = .center
     }
     
+    func updateFont(font: String) {
+        appDelegate.currentFont = font
+    }
+    
     // MARK: Actions
     @IBAction func dismissSelf() {
         dismiss(animated: true, completion: nil)
     }
     
     // MARK: Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Choose Font"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissSelf))
     }
     
+    // MARK: TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appDelegate.fontArray.count
     }
@@ -70,9 +73,4 @@ class FontTableViewController: UITableViewController, UITextFieldDelegate {
         self.tableView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
-    
-    func updateFont(font: String) {
-        appDelegate.currentFont = font
-    }
-    
 }

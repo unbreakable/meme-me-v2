@@ -1,6 +1,6 @@
 //
 //  MemeDetailViewController.swift
-//  BondVillains
+//  Meme-Me-2.0
 //
 //  Created by JFK on 6/26/17.
 //  Copyright © 2017 Udacity. All rights reserved.

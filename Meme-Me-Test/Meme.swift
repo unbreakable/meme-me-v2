@@ -14,6 +14,6 @@ struct Meme {
     var bottomText : String
     var originalImage : UIImage
     var memedImageJK: UIImage
-    var zoomedNoTextImage: UIImage // Zoomed image with no text so app can present in collection and table images with text dynamically arranged (dynamic reconstruction is what the appstore app seems to do and this allows zoomed thumbs with that UI look)
+    var zoomedNoTextImage: UIImage // Save zoomed image for table/collection thumbnails
     var memeFont: String
 }

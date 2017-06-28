@@ -54,6 +54,7 @@ class MemeCollectionViewController: UICollectionViewController, UITextFieldDeleg
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    // MARK: CollectionView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(memes.count)
         return memes.count
