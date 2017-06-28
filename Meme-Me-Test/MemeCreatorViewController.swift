@@ -16,15 +16,9 @@ class MemeCreatorViewController: UIViewController, UIImagePickerControllerDelega
     let notificationName = Notification.Name("NotificationIdentifier")
     let pickerControllerJK = UIImagePickerController()
     
-    // MARK: Outlets for Image
+    // MARK: Outlets
     @IBOutlet weak var scrollViewForImage: UIScrollView!
     @IBOutlet weak var imageViewJK: UIImageView!
-    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
-    
-    // MARK: Outlets for All Else
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!

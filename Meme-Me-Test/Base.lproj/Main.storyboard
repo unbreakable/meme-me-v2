@@ -20,7 +20,7 @@
         <scene sceneID="abF-da-ujT">
             <objects>
                 <collectionViewController id="6qc-0W-hWR" customClass="MemeCollectionViewController" customModule="Meme_Me_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zi1-tg-TbM">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Zi1-tg-TbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,13 +214,13 @@
                                 </connections>
                             </scrollView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1ZF-ct-Qb1">
-                                <rect key="frame" x="18" y="64" width="339" height="20"/>
+                                <rect key="frame" x="18" y="64" width="339" height="21"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="17w-7e-lYU">
-                                <rect key="frame" x="18" y="583" width="339" height="20"/>
+                                <rect key="frame" x="18" y="582" width="339" height="21"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -304,11 +304,7 @@
                         <outlet property="bottomText" destination="17w-7e-lYU" id="VHH-RA-jKX"/>
                         <outlet property="cameraButton" destination="JPa-lr-x2Q" id="R0f-Uv-Cmb"/>
                         <outlet property="cancelButton" destination="0u7-jZ-IJ2" id="Z0V-ov-PJ6"/>
-                        <outlet property="imageViewBottomConstraint" destination="mP9-ay-beq" id="Ngx-dX-Jc5"/>
                         <outlet property="imageViewJK" destination="rN7-m6-MTK" id="PWw-fU-FdA"/>
-                        <outlet property="imageViewLeadingConstraint" destination="meS-I0-M6x" id="CCe-Ir-ZMF"/>
-                        <outlet property="imageViewTopConstraint" destination="Wvj-9j-EcA" id="Km1-1o-cnw"/>
-                        <outlet property="imageViewTrailingConstraint" destination="XLt-8W-Qgt" id="nlN-qO-HbP"/>
                         <outlet property="navBar" destination="4eN-1E-bBm" id="Ooe-sF-z72"/>
                         <outlet property="scrollViewForImage" destination="XrH-0i-X5K" id="7qd-DJ-vjK"/>
                         <outlet property="shareButton" destination="T2u-Wm-Y6S" id="04K-wk-exx"/>
@@ -343,7 +339,7 @@
             <objects>
                 <navigationController id="yfc-v4-ic8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Collection" image="collection_30x30" id="Wmu-Dg-EGK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRR-zl-W6l">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fRR-zl-W6l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -360,7 +356,7 @@
             <objects>
                 <navigationController id="88y-UQ-dtI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="table_30x30" id="uIg-At-wY8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuV-Ee-Icj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IuV-Ee-Icj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -471,7 +467,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HZl-6Y-wc8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QDj-5f-KRT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QDj-5f-KRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
